@@ -1,0 +1,116 @@
+:root {
+    --wordle-green: #6aaa64;
+    --wordle-gray-light: #d3d6da;
+    --wordle-gray-dark: #878a8c;
+    --wordle-red: #e05a5a;
+    --bg-color: #f8f9fa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    background-color: var(--bg-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' opacity='0.15'%3E%3Crect x='10' y='10' width='40' height='40' fill='%236aaa64' rx='5'/%3E%3Crect x='70' y='10' width='40' height='40' fill='%23d3d6da' rx='5'/%3E%3Crect x='10' y='70' width='40' height='40' fill='%23878a8c' rx='5'/%3E%3Crect x='70' y='70' width='40' height='40' fill='%23e05a5a' rx='5'/%3E%3C/svg%3E");
+}
+
+/* Логотип у куті */
+.top-left-logo {
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-family: 'Arial Black', Impact, sans-serif; 
+    font-size: 2rem;
+    line-height: 1;
+    color: black;
+    text-decoration: none;
+}
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 10px);
+    gap: 2px;
+}
+
+.mini-box {
+    width: 10px;
+    height: 10px;
+    background-color: var(--wordle-gray-light);
+    border: 1px solid var(--wordle-gray-dark);
+}
+
+.mini-box.green {
+    background-color: var(--wordle-green);
+    border-color: var(--wordle-green);
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 40px;
+    margin-top: 40px; 
+}
+
+/* Рядок слова */
+.word-row {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 8px; 
+    text-decoration: none;
+    color: black;
+    width: 332px; 
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--wordle-gray-light); 
+    border: 2px solid var(--wordle-gray-dark);
+    border-radius: 5px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s; 
+}
+
+.word-row:hover .letter {
+    background-color: var(--wordle-green); 
+    border-color: var(--wordle-green);
+    color: white;
+}
+
+/* Фотографія */
+.main-photo {
+    max-width: 100%;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.invisible-element{
+    opacity: 0;
+}
+
+input{
+    aspect-ratio: 1/1;
+    width: 1.5rem;
+
+}
+
+input.wrong{
+    border-color: red;
+}
+
+input.correct{
+    border-color: green;
+}
